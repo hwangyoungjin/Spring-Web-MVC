@@ -1,15 +1,22 @@
 package com.example.demowebmvc;
-
 import com.sun.istack.internal.NotNull;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 public class Event {
+
+    interface ValidateLimit{}
+    interface ValidateName{}
+
     private Integer id;
 
-    @NotNull
+    @NotBlank(groups = ValidateName.class)
     private String name;
 
+    @Min(value = 0, groups = ValidateLimit.class)
     private Integer limit;
-
 
     private String coment;
 

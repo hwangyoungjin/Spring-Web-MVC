@@ -6,6 +6,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Controller
 public class SampleController {
 
@@ -21,11 +23,13 @@ public class SampleController {
         return "/events/form";
     }
 
-    @PostMapping("/events")
+    @PostMapping("/events/name/{name}")
     @ResponseBody
-    public Event getEvent(@Validated @ModelAttribute Event event, BindingResult bindingResult){
+    public Event getEvent(@Validated(Event.ValidateName.class)@ModelAttribute Event event, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             event.setComent("에러발생:"+bindingResult.getAllErrors());
+            System.out.println("==========================");
+            bindingResult.getAllErrors().forEach(c-> System.out.println(c.toString()));
         }
         return event;
     }
