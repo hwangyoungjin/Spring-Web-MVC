@@ -9,10 +9,11 @@
 3. http 요청 맵핑 (연습문제완료X)
 
 4. Handler Method
-	1.URI 패턴 `GET`
-		- @PathVariable
-		- @MatrixVariable
-	2.요청매개변수`GET, POST` 
-		- @RequestParam
-		- @ModelAttribute + [@Vaildated , BindingResult]
-		└> **@valid적용안됨 [dependency추가로 해결](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation/2.3.3.RELEASE)**
+    1. URI 패턴 `GET`
+     - @PathVariable
+     - @MatrixVariable
+     
+    2. 요청매개변수 `GET, POST` 
+     - @RequestParam
+     - @ModelAttribute + [@Vaildated , BindingResult]
+     - └> **@valid적용안됨 [dependency추가로 해결](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation/2.3.3.RELEASE)**
