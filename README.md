@@ -17,5 +17,8 @@
      - @RequestParam
      - @ModelAttribute + [@Vaildated , BindingResult]
      - └> **@valid적용안됨 [dependency추가로 해결](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation/2.3.3.RELEASE)**
+<<<<<<< HEAD
      - 바인딩 에러 발생시 에러표시(thymeleaf이용)
      - POST 후 브라우져 새로고침하는 경우 Redirect이용 : POST-> Redirect -> GET
+=======
+>>>>>>> origin/master
