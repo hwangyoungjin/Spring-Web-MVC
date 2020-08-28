@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Event List</title>
+</head>
+<body>
+<a th:href="@{/events/form}">Create New Event</a>
+<!--eventList를 출력하는 코드-->
+<div th:unless="${#lists.isEmpty(eventList)}">
+    <ul th:each="event: ${eventList}">
+        <p th:text="${event.name}">Event Name</p>
+    </ul>
+</div>
+</body>
+</html>

@@ -7,31 +7,46 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class SampleController {
 
-    @RequestMapping("/hello/{name=[a-z]+}")
-    @ResponseBody
-    public String hello(@PathVariable String name){
-        return "hello"+name;
-    }
 
-    @GetMapping("/event/form")
+    @GetMapping("/events/form")
     public String eventForm(Model model){
         model.addAttribute("event",new Event());
         return "/events/form";
     }
 
-    @PostMapping("/events/name/{name}")
-    @ResponseBody
-    public Event getEvent(@Validated(Event.ValidateName.class)@ModelAttribute Event event, BindingResult bindingResult){
+    @PostMapping("/events")
+    public String createEvent(@Validated @ModelAttribute Event event,
+                              BindingResult bindingResult,
+                              Model model){
         if(bindingResult.hasErrors()){
-            event.setComent("에러발생:"+bindingResult.getAllErrors());
-            System.out.println("==========================");
-            bindingResult.getAllErrors().forEach(c-> System.out.println(c.toString()));
+            return "/events/form";
         }
-        return event;
+
+        //원래는 아래부분이 db의 저장하는 부분임
+        /*List<Event> eventList = new ArrayList<>(); //list.html에서 eventList 참조하고 있음
+        eventList.add(event);
+        model.addAttribute("eventList",eventList); // model.addAttribute(eventList)와 동일(이름이 같다면 이렇게써도됨)
+*/
+        return "redirect:/events/list"; //요청처리 /events/list" 으로 위임
     }
 
+    @GetMapping("/events/list")
+    public String getEvents(Model model){
+
+        //원래는 db에서 가져오는 부분
+        Event event = new Event();
+        event.setName("Spring");
+        event.setLimit(10);
+
+        List<Event> eventList = new ArrayList<>();
+        eventList.add(event);
+        model.addAttribute("eventList",eventList);
+        return "events/list";
+    }
 }

@@ -11,6 +11,9 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.Map;
 
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.content;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -32,12 +35,25 @@ class SampleControllerTest {
 //    }
 
     @Test
-    public void postEvent() throws Exception{ // 이름은 uri path로 받고
-        mockMvc.perform(post("/events/name/youngjin")
-                    .param("limit","-10")) //limit은 param으로
+    public void postEvent() throws Exception{
+//        mockMvc.perform(post("/events")
+//                    .param("name","youngjin")
+//                    .param("limit","-10")) //limit은 param으로
+//                .andDo(print())
+//                .andExpect(status().isOk())
+//                .andExpect(model().hasErrors()) //모델에 들어있는 에러정보
+//                ;
+        /*
+        model에 들어있는 객체 모두 보기
+         */
+        ResultActions resultActions = mockMvc.perform(post("/events")
+                .param("name","youngjin")
+                .param("limit","-10")) //limit은 param으로
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("name").value("youngjin"))
-                ;
+                .andExpect(model().hasErrors()); //모델에 들어있는 에러정보
+        ModelAndView mav = resultActions.andReturn().getModelAndView();
+        Map<String,Object> model = mav.getModel();
+        System.out.println(model.size());
     }
 }

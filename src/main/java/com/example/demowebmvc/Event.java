@@ -7,15 +7,12 @@ import javax.validation.constraints.Size;
 
 public class Event {
 
-    interface ValidateLimit{}
-    interface ValidateName{}
-
     private Integer id;
 
-    @NotBlank(groups = ValidateName.class)
+    @NotBlank
     private String name;
 
-    @Min(value = 0, groups = ValidateLimit.class)
+    @Min(0)
     private Integer limit;
 
     private String coment;
