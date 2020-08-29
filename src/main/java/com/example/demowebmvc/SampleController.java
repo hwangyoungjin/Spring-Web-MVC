@@ -5,34 +5,50 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@SessionAttributes("event")
 public class SampleController {
 
-
-    @GetMapping("/events/form")
-    public String eventForm(Model model){
-        model.addAttribute("event",new Event());
-        return "/events/form";
+    @GetMapping("/events/form/name")
+    public String eventFormName(Model model){
+        model.addAttribute("event",new Event()); // @SessionAttribute를 통해 session에 들어간다.
+        return "/events/form-name";
     }
 
-    @PostMapping("/events")
-    public String createEvent(@Validated @ModelAttribute Event event,
-                              BindingResult bindingResult,
-                              Model model){
+    @PostMapping("/events/form/name")
+    public String eventFormNameSubmit(@Validated @ModelAttribute Event event,
+                                     BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return "/events/form";
+            return "/events/form-name";
         }
 
-        //원래는 아래부분이 db의 저장하는 부분임
-        /*List<Event> eventList = new ArrayList<>(); //list.html에서 eventList 참조하고 있음
-        eventList.add(event);
-        model.addAttribute("eventList",eventList); // model.addAttribute(eventList)와 동일(이름이 같다면 이렇게써도됨)
-*/
+        return "redirect:/events/form/limit"; //요청처리 /events/list" 으로 위임
+    }
+
+    @GetMapping("/events/form/limit")
+    public String eventFormLimit(@ModelAttribute Event event, Model model){
+        model.addAttribute("event", event);
+        return "/events/form-limit";
+    }
+
+    @PostMapping("/events/form/limit")
+    public String eventFormLimitSubmit(@Validated @ModelAttribute Event event,
+                                     BindingResult bindingResult,
+                                     SessionStatus sessionStatus){
+        if(bindingResult.hasErrors()){
+            return "/events/form-limit";
+        }
+
+        //DB저장하는 곳
+
+        //세션만료
+        sessionStatus.setComplete();
+
         return "redirect:/events/list"; //요청처리 /events/list" 으로 위임
     }
 

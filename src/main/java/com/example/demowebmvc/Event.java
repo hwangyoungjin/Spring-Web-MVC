@@ -7,6 +7,9 @@ import javax.validation.constraints.Size;
 
 public class Event {
 
+    interface ValidateLimit{}
+    interface ValidateName{}
+
     private Integer id;
 
     @NotBlank
