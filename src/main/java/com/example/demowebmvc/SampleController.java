@@ -7,6 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,8 @@ public class SampleController {
 
     @GetMapping("/events/form/name")
     public String eventFormName(Model model){
-        model.addAttribute("event",new Event()); // @SessionAttribute를 통해 session에 들어간다.
+        // @SessionAttribute를 통해 session에 들어간다.
+        model.addAttribute("event",new Event());
         return "/events/form-name";
     }
 
@@ -53,7 +55,9 @@ public class SampleController {
     }
 
     @GetMapping("/events/list")
-    public String getEvents(Model model){
+    public String getEvents(Model model, @SessionAttribute LocalDateTime visitTime){
+        //visitTime 이름 동일해야함
+        System.out.println(visitTime);
 
         //원래는 db에서 가져오는 부분
         Event event = new Event();
@@ -63,6 +67,6 @@ public class SampleController {
         List<Event> eventList = new ArrayList<>();
         eventList.add(event);
         model.addAttribute("eventList",eventList);
-        return "events/list";
+        return "/events/list";
     }
 }

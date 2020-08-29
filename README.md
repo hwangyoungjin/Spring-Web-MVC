@@ -10,18 +10,26 @@
 
 4. Handler Method
     1. URI 패턴 `GET`
-     - @PathVariable
-     - @MatrixVariable
+    	> - @PathVariable
+    	> - @MatrixVariable
      
-    2. 요청매개변수 `GET, POST` 
-     - @RequestParam
-     - @ModelAttribute + [@Vaildated , BindingResult]
-     - └> **@valid적용안됨 [dependency추가로 해결](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation/2.3.3.RELEASE)**
-     - 바인딩 에러 발생시 에러표시
-     - POST 후 브라우져 새로고침하는 경우 Redirect이용 : POST-> Redirect -> GET
+    2. 요청 매개변수 `GET, POST` 의 파라미터
+    	> - @RequestParam
 
-    3. 모델정보 HttpSession에 저장
-     - @SessionAttributes으로 모델정보 Session에 등록
-     - └> 파라미터에 @ModelAttribute으로 모델 받아오기
-     - └> 파라미터 SessionStatus 으로 세션 종료 	
+    	> - @ModelAttribute + [@Vaildated , BindingResult]
+    	>	+ └> **@valid적용안됨 [dependency추가로 해결](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation/2.3.3.RELEASE)**
+
+    	> - BindingResult : 바인딩 에러 발생시 에러표시
+
+     	> - @SessionAttribute
+    	>	+ └> Controller 밖(Interceptor or Filter)에서 만든 세션 데이터 접근시 사용
+   
+    3. POST 후 브라우져 새로고침하는 경우 Redirect이용 : POST-> Redirect -> GET
+
+    4. 모델정보 HttpSession에 저장
+    	> - @SessionAttributes(Controller에 설정)으로 모델정보 Session에 등록
+     	>	+ └> 파라미터에 @ModelAttribute으로 모델 받아오기
+     	>	+ └> 파라미터 SessionStatus 으로 세션 종료 	
+
+ 
 
