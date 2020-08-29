@@ -5,11 +5,12 @@
     <title>Event List</title>
 </head>
 <body>
-<a th:href="@{/events/form}">Create New Event</a>
+<a th:href="@{/events/form/name}">Create New Event</a>
 <!--eventList를 출력하는 코드-->
 <div th:unless="${#lists.isEmpty(eventList)}">
     <ul th:each="event: ${eventList}">
-        <p th:text="${event.name}">Event Name</p>
+        name : <p th:text="${event.name}">Event Name</p>
+        limit : <p th:text="${event.limit}">Event Limit</p>
     </ul>
 </div>
 </body>

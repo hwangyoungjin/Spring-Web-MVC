@@ -8,8 +8,8 @@
 
 3. http 요청 맵핑 (연습문제완료X)
 
-4. Handler Method
-    1. URI 패턴 `GET`
+4. Handler Method 
+    1. URI 패턴 `GET` 의 파라미터
     	> - @PathVariable
     	> - @MatrixVariable
      
@@ -29,7 +29,12 @@
     4. 모델정보 HttpSession에 저장
     	> - @SessionAttributes(Controller에 설정)으로 모델정보 Session에 등록
      	>	+ └> 파라미터에 @ModelAttribute으로 모델 받아오기
-     	>	+ └> 파라미터 SessionStatus 으로 세션 종료 	
+     	>	+ └> 파라미터 SessionStatus 으로 세션 종료
 
- 
+    5. Redirect로 값 전달
+    	> - RedirectAttributes의 addAttibute 를 통해 원하는 값전달
+     	>	+ └> @RequestParam으로 받아서 값 사용
+
+    	> - RedirectAttributes의 addFlashAttibute 를 통해 원하는 객체전달 
+     	>	+ └> Model으로 받아와서 model.asMap().get()으로 사용
 
