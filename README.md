@@ -40,3 +40,10 @@
 
     5. File업로드시 사용하는 MultipartFile
     	> - @RequestParam으로 받아서 값 사용
+
+    6. ResponseEntity를 사용하여 File 다운로드
+    	> - 응답헤더의 (파일이름, Type, 크기) 명시
+
+    	> - ResourceLoader사용 -> path 설정 -> .getFile()
+
+    	> - [Tika](https://mvnrepository.com/artifact/org.apache.tika/tika-core)로 미디어타입(파일종류) 알아내기
