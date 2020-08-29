@@ -38,3 +38,5 @@
     	> - RedirectAttributes의 addFlashAttibute 를 통해 원하는 객체전달 
      	>	+ └> Model으로 받아와서 model.asMap().get()으로 사용
 
+    5. File업로드시 사용하는 MultipartFile
+    	> - @RequestParam으로 받아서 값 사용
