@@ -2,22 +2,22 @@ package com.example.demowebmvc;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
-@RestController
+@Controller
 @RequestMapping("/api/events") // url 겹치지않게 클래스 위에 선언
 public class EventApi {
     @PostMapping
-    public Event createEvent(HttpEntity<Event> request){
+    public ResponseEntity<Event> createEvent(@RequestBody @Valid Event event,BindingResult bindingResult){
         // event 저장
-        MediaType conMediaType = request.getHeaders().getContentType();
-        System.out.println(conMediaType);
-        return request.getBody();
+        if(bindingResult.hasErrors()){
+            return ResponseEntity.badRequest().build(); //에러 보내기
+        }
+        return ResponseEntity.ok().body(event);
     }
 }

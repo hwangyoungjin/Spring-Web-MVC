@@ -49,3 +49,4 @@
     	> - [Tika](https://mvnrepository.com/artifact/org.apache.tika/tika-core)로 미디어타입(파일종류) 알아내기
 
     7. @RequestBody 와 HttpEntity
+    8. @ResponseBody 와 ResponseEntity<T>
