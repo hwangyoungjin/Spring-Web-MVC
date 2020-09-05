@@ -16,6 +16,18 @@ import java.util.List;
 @SessionAttributes("event")
 public class EventController {
 
+    @ExceptionHandler
+    public String eventErrorHandler(EventException eventException, Model model){
+        model.addAttribute("message", "error 발생시키기");
+        return "/error";
+    }
+
+    @GetMapping("/events/create")
+    public String eventCreate(){
+        throw new EventException();
+        //return "/event/form-data";
+    }
+
     @GetMapping("/events/form/name")
     public String eventFormName(Model model){
         // @SessionAttribute를 통해 session에 들어간다.
