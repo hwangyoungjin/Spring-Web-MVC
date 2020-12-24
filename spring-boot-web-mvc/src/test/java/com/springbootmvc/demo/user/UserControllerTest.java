@@ -32,7 +32,7 @@ public class UserControllerTest {
         String userJson = "{\"username\":\"young\",\"password\":\"123\"}";
         mockMvc.perform(MockMvcRequestBuilders.post("/users/create") // 해당 url로
                 .contentType(MediaType.APPLICATION_JSON) //
-                .accept(MediaType.APPLICATION_JSON) //받고싶은 데이터타입 명시 안해도 상관없으나 주면 더 좋음
+                .accept(MediaType.APPLICATION_JSON) //받고싶은 데이터타입 명시, 안해도 상관없으나 주면 더 좋음
                 .content(userJson)) // json형식의 데이터를 request로 보낸다.
                     //응답결과가 json으로 나올것이므로 본문 username, password에 내가 넣어주었던 값이 young,123이 나오는지 확인
                     .andExpect(MockMvcResultMatchers.status().isOk())
