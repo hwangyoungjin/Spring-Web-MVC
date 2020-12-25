@@ -82,13 +82,26 @@
 	.andExpect(status())
 	[해결] : MockMvcResultMatchers class 사용하여 status 결과 확인
 	.andExpect(MockMvcResultMatchers.status())
-
+	
+	[에러] : 요청에 대한 결과 출력하기 위해 사용되는 print()안됨
+	.andDo(print())
+	[해결] : MockMvcResultHandler class 사용하여 print()
+ 	
+	* 정리 *
 	@Test
 	    public void hello() throws Exception{
 	        mockMvc.perform(MockMvcRequestBuilders.get("/hello"))
 	                .andExpect(MockMvcResultMatchers.status().isOk())
+		  .andDo(MockMvcResultHandlers.print())
 	                .andExpect(MockMvcResultMatchers.content().string("hello"));
 	    }
+
+	------
+
+	[에러] view에서 특정 String을 포함하는지 검사하는 테스트 containsString()안됨
+	.andExpect(MockMvcResultMatchers.content().string(containsString("young")));
+	[해결] Matchers class 사용
+	.andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("young")));
 	```
 1. 스프링 웹 mvc 1부
 	- 스프링 mvc 와 스프링부트 mvc 비교
@@ -106,7 +119,7 @@
 	
 	[UserControllerTest.java]
 	@RunWith(SpringRunner.class)
-	@WebMvcTest(UserController.class)
+	@WebMvcTest(UserController.class) // 테스트하려는 class 이름
 	public class UserControllerTest {
 	
 	    //해당 객체는 @WebMvcTest를 통해 자동으로 bean으로 만들어지는데 그 bean을 사용
@@ -158,3 +171,14 @@
 	- 스프링의 root url "/" 은 기본적으로 index.html 이므로 기본 resource directory에 index.html 파일을 넣는다.
 	- 파비콘은 favicon.icon 확장자로 기본 resource directory에 넣는다.
 		- cache때문에 변경 안 될 수 있다. /favicon.ico 요청 후 다시 localhost 요청시 해결가능
+7. 스프링 웹 mvc 7부
+	- 스프링부트가 지원하는 템플릿 엔진 중 하나인 Thymeleaf 사용하기
+		1. pom.xml에 Thymeleaf 의존성 추가
+		```java
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		```
+		2. 모든 동적으로 생성하는 view는 /src/main/resources/template/ 에 넣는다.
+			- **Thymeleaf 템플릿 엔진(servlet Container와 독립적)이 이를 처리**
