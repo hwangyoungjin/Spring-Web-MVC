@@ -132,6 +132,8 @@
 	- ViewResolver
 4. 스프링 웹 mvc 4부
 	- 정적리소스 지원
+		- 기본리소스 classpath 제공
+		- WebMvcConfiguration의 addResourceHandlers로 핸들러 추가 가능
 	- 컴파일 빌드 개념 참고
 	```html
 	* 컴파일
@@ -149,3 +151,10 @@
 	: 빌드를 도와주는 빌드 툴 :  Ant, Maven, Gradle 등
 	: 빌드 툴은 전처리(preprocessing), 컴파일(Compile), 패키징(packaging), 테스팅(testing), 배포(distribution)를 지원
 	```
+5. 스프링 웹 mvc 5부
+	- 스프링부트는 client에서 사용하는 라이브러리(jquery, bootstap, ReactJS 등등)  jar파일로 추가가능
+	- [Maven 중앙저장소](https://mvnrepository.com/)에서 해당 의존성 pop.xml에 추가
+6. 스프링 웹 mvc 6부
+	- 스프링의 root url "/" 은 기본적으로 index.html 이므로 기본 resource directory에 index.html 파일을 넣는다.
+	- 파비콘은 favicon.icon 확장자로 기본 resource directory에 넣는다.
+		- cache때문에 변경 안 될 수 있다. /favicon.ico 요청 후 다시 localhost 요청시 해결가능
