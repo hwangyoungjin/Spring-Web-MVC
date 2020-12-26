@@ -182,3 +182,49 @@
 		```
 		2. 모든 동적으로 생성하는 view는 /src/main/resources/template/ 에 넣는다.
 			- **Thymeleaf 템플릿 엔진(servlet Container와 독립적)이 이를 처리**
+8. 스프링 웹 mvc 8부 
+	- HtmlUnit
+9. 스프링 웹 mvc 9부
+	- ExceptionHandler
+		- 스프링부트가 제공하는 기본 예외처리 핸들러 **BasicErrorController**
+		- 커스터마이징 : BasicErrorController를 상속받아 구현하기
+	- 커스텀 에러 페이지
+		- status code 별로 resource/static/error Or resource/template/error에 페이지 구성
+		- 페이지 명은 status code 이름으로 만든다. (Ex> 404.html)
+10. 스프링 웹 mvc 10부
+	- SpringHATEOAS 아직이해X
+11. 스프링 웹 mvc 11부
+	- CORS : Cross-Origin-Resource-Sharing
+		- 서로다른 origin끼리 Resource Sharing 가능
+		- Sharing 해주는 쪽(port: 8080) @Controller Or @RequestMapping 쪽에 @CrossOrigin(oring정보:18080) 입력
+		```java
+		    @CrossOrigin(origins = "http://localhost:18080")
+		    @GetMapping("/hello")
+		    public String hello() {
+		        return "hello";
+		    }
+		``` 
+
+# Springboot-data
+---
+1. 스프링 데이터 1부
+	```
+	* 프로젝트 : 프로젝트 spring initialize -> web, jdbc, h2 의존성 추가
+	*목차
+	1. SQL DB
+	- 인메모리 데이터 베이스
+	- databaseSource 설정
+	- DBCP
+	- JDBC
+	- 스프링 데이터 JPA
+	- JOOQ 사용
+	- 데이터베이스 초기화
+	- 데이터베이스 마이그레이션 툴 연동
+	
+	2. NoSQL
+	- Redis(key/value)
+	- MongoDB(Document)
+	- Neo4J(Graph)
+	```
+2. 스프링 데이터 2부 : 인메모리 데이터 베이스
+	
