@@ -20,7 +20,6 @@ public class H2Runner implements ApplicationRunner {
         try(Connection connection = dataSource.getConnection()){
             System.out.println(connection.getMetaData().getURL());
             System.out.println(connection.getMetaData().getUserName());
-
             Statement statement = connection.createStatement();
             String sql = "CREATE TABLE USER(" +
                     "ID INTEGER NOT NULL, " +
