@@ -69,6 +69,7 @@
 # Springboot-mvc
 ---
 0. Junit test 부분
+	- Junit4 에서 Runwith안되는 경우 Spring boot stater parent버전 2.2.4로 맞추기
 	- Junit test에서 
 	```java
 	>> https://effectivesquid.tistory.com/entry/Spring-test-%EC%99%80-Junit4%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8
@@ -261,3 +262,13 @@
 	- hikariCP는 스프링 부트 2.0부터 default JDBC connection pool이다.
 	- 도커는 애플리케이션 실행에 필요한 환경을 하나의 이미지로 모아두고 그 이미지를 사용해 다양한 환경에서 실행 환경을 구축, 운용하기 위한 오픈소스 플랫폼
 4. 스프링 데이터 4부 : postgrsSQL [**Pass**]
+5. 스프링 데이터 5부 6부 : Spring boot data JPA 연동
+	- JPA 의존성 추가
+	```java
+	<dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+	```
+	- jpa 상속받은 Repository만들기
+	- h2 인메모리 사용하여 jpa 사용하기
