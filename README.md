@@ -69,7 +69,7 @@
 # Springboot-mvc
 ---
 0. Junit test 부분
-	- Junit4 에서 Runwith안되는 경우 Spring boot stater parent버전 2.2.4로 맞추기
+	- Junit4 에서 Runwith안되는 경우 Spring boot stater parent버전 2.2.4.RELEASE로 맞추기
 	- Junit test에서 
 	```java
 	>> https://effectivesquid.tistory.com/entry/Spring-test-%EC%99%80-Junit4%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%ED%85%8C%EC%8A%A4%ED%8A%B8
@@ -276,6 +276,96 @@
 
 # Springboot-Security
 ---
-1. Thymeleaf로 view rendering 사용
-	- 의존성 추가
-	- 
+1. 준비 : Thymeleaf로 view rendering 사용
+	- Thymeleaf 의존성 추가
+	- controller 생성 ( GetMapping : hello, my )
+	- view 3개 생성 ( index.html / hello.html / my.html )
+	- test 완료
+	```java
+	@RunWith(SpringRunner.class)
+	@WebMvcTest(HomeController.class)
+	public class HomeControllerTest {
+	
+	    @Autowired
+	    MockMvc mockMvc;
+	
+	    @Test
+	    public void hello() throws Exception{
+	        mockMvc.perform(MockMvcRequestBuilders.get("/hello"))
+	                .andDo(MockMvcResultHandlers.print())
+	                .andExpect(MockMvcResultMatchers.status().isOk())
+	                .andExpect(MockMvcResultMatchers.view().name("hello"));
+	    }
+	
+	    @Test
+	    public void my() throws Exception{
+	        mockMvc.perform(MockMvcRequestBuilders.get("/my"))
+	                .andDo(MockMvcResultHandlers.print())
+	                .andExpect(MockMvcResultMatchers.status().isOk())
+	                .andExpect(MockMvcResultMatchers.view().name("my"));
+	    }
+		
+	}
+	```
+2. Spring Security 사용
+	- Security 의존성 추가
+	- test 재실행 -> 오류
+	```java
+	[에러메세지]
+	: MockHttpServletResponse:
+	  Status = 401
+	  Error message = Unauthorized
+	  Headers = [WWW-Authenticate:"Basic realm="Realm"", -------
+	[이유]
+	: 스프링부트가 제공하는 시큐리티 자동설정 중 하나로
+	: 모든 요청(request) 모두 인증이 필요
+	  -> Basic, form 요청 인증 필요
+
+	[해결] 
+	1. security test 의존성 추가
+	        <dependency>
+	            <groupId>org.springframework.security</groupId>
+	            <artifactId>spring-security-test</artifactId>
+	            <version>${spring-security.version}</version>
+	        </dependency>
+	2. test 메소드에 @WithMockUser 추가
+	```
+	- Springboot에서 security 관련하여 제공하는 자동설정
+		- **SecurityAutoConfiguration.java**
+		- SpringSecurity 의존성이 들어있는 경우 적용된다.
+		- 자동으로 기본 login form 만들어 준다
+		- 따라서 브라우져로 인증 안된 요청시 localhost:8080/login으로 자동 redirect 된다. 
+		
+	- Springboot에서 security 관련하여 제공하는 자동설정 2
+		- **WebSecurityConfigurerAdapter.java**
+		- 해당 class 를 상속받으면 Springboot가 제공하는 Security와 거의 동일한 나만의 security 만들 수 있다.
+		```java
+		* 제공되는 spring Security 기본설정 핵심
+		* WebSecurityConfigurerAdapter.java 안에 configure() 메소드
+		protected void configure(HttpSecurity http) throws Exception {
+		        this.logger.debug("Using default configure(HttpSecurity). If subclassed this will potentially override subclass configure(HttpSecurity).");
+		        ((HttpSecurity)
+			((HttpSecurity)((AuthorizedUrl)http
+			     .authorizeRequests() // 권한 설정하기
+			     .anyRequest()) // 모든 요청에 대해서
+			.authenticated() // 인증이 필요
+			.and())
+		        .formLogin() // formLogin을 사용하겠다.
+		        .and())
+		        .httpBasic(); // httpBasic을 사용하겠다.
+		    }
+		```
+	- Springboot에서 security 관련하여 제공하는 자동설정 3
+		- **UserDetailsServiceAutoConfiguration.java**
+		- 스프링부트 application이 실행될때 생성되는 인메모리 user 객체를 만들어 제공
+		- username은 **user** , password는 매번 **application 띄울때마다** 달라진다.
+		``` java
+		but, 아래 3개 interface을 구현한 bean이 없을때만 만들어준다. 
+		- interface AuthenticationManager
+		- interface AuthenticationProvider 
+		- interface UserDetailsService
+		
+		cf. 스프링 시큐리티를 사용하는 프로젝트에선 100% 인메모리 user객체를 사용하지 않으므로
+		사용할 일 거의 없다.
+		```
+		 
