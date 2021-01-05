@@ -273,3 +273,9 @@
 	- jpa 상속받은 Repository만들기
 	- h2 인메모리 사용하여 jpa 사용하기
 6. 스프링 데이터 7부~12부 정리 : 도커 학습 후 다시 공부
+
+# Springboot-Security
+---
+1. Thymeleaf로 view rendering 사용
+	- 의존성 추가
+	- 
