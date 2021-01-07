@@ -456,15 +456,42 @@
 	- applicationRunner를 상속받아 초기화 코드에 user객체 하나 만들기 
 	```java
 	@Component
-                public class AccountRunner implements ApplicationRunner {
+	public class AccountRunner implements ApplicationRunner {
                 
-                    @Autowired
-                    AccountService accountService;
+	 @Autowired
+	 AccountService accountService;
                 
-                    @Override
-                    public void run(ApplicationArguments args) throws Exception {
-                        Account young = accountService.createAccont("young","1234");
-                        System.out.println(young.getUsername()+"password: "+ young.getPassword());
-                    }
-                }
+	 @Override
+	 public void run(ApplicationArguments args) throws Exception {
+	    Account young = accountService.createAccont("young","1234");
+	    System.out.println(young.getUsername()+"password: "+ young.getPassword());
+	 }
+	}
 	```	 
+	```java
+	* 어처구니없는 오류
+	[오류]
+	UnsatisfiedDependencyException
+	[원인]
+	AccountRepository.java에서
+	@Repository
+	public interface AccountRepository extends JpaRepository<Account,Long> {
+	    Optional<Account> findbyUsername(String username);
+	}
+
+	[해결]
+	findbyUsername -> findByUsername 로 b가 문제였음
+	B로 바꿔서 해결완료
+	```
+4. 인증된 User Controller에서 활용
+	- 2가지
+	```java
+	@GetMapping("/my")
+	public String my(Model model, Authentication authentication){
+	    model.addAttribute("name",authentication.getName());
+	
+	    Authentication a = SecurityContextHolder.getContext().getAuthentication();
+	    model.addAttribute("name1",a.getName());
+	    return "my";
+	}
+	``` 
