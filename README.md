@@ -61,12 +61,13 @@
 ## 스프링부트 개념과 활용
 ---
 1. 스프링부트 구조
-2. 스프링부트의 의존성
-3. 스프링부트의 원리
-	1. 자동설정 원리
-	2. 내장 웹 서버 이해/응용(1부-컨테이너와 서버포트/2부- http1.1 , http2 , https)
+2. 스프링부트의 원리
+	1. 의존성 관리
+	2. 자동설정 원리
+	3. 내장 웹 서버 이해/응용(1부-컨테이너와 서버포트/2부- http1.1 , http2 , https)
+	4. 독립적으로 실행 가능한 jar
 
-# Springboot-mvc
+## Springboot-mvc
 ---
 0. Junit test 부분
 	- Junit4 에서 Runwith안되는 경우 Spring boot stater parent버전 2.2.4.RELEASE로 맞추기
@@ -206,7 +207,7 @@
 		    }
 		``` 
 
-# Springboot-data
+## Springboot-data
 ---
 1. 스프링 데이터 1부
 	```
@@ -274,7 +275,7 @@
 	- h2 인메모리 사용하여 jpa 사용하기
 6. 스프링 데이터 7부~12부 정리 : 도커 학습 후 다시 공부
 
-# Springboot-Security
+## Springboot-Security
 ---
 1. 준비 : Thymeleaf로 view rendering 사용
 	- Thymeleaf 의존성 추가
@@ -545,3 +546,32 @@
 	
 	* 이때 /hello 받는 컨트롤러는 @RestController
 	```
+
+## Spring boot 운영
+---
+1. 스프링부트는 Actuator라는 모듈 제공
+	- 스프링부트 운영중에 주시할 수 있는 유용한 정보들 제공
+	- 정보들을 EndPoint를 통해 제공해준다.
+	```java
+	* EndPoint : 통신의 끝점
+	```
+	![image](https://user-images.githubusercontent.com/60174144/104096264-cc601b80-52de-11eb-8e75-f49af0715ea2.png)
+	- EndPoint를 통해 확인할 수 있는 정보 흭득하기 
+		1. Spring-boot-starter-actuator 의존성 추가
+		2. [해당 문서](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-endpoints)에서 나온 모든 ID에 해당하는 Actuator들 활성화 된다.
+		```java
+		* auditevents : 누가 인증에 성공하고 실패 했는지에 대한 정보
+		* beans : 컨테이너에 등록된 빈들 정보
+		* conditions : 어떤 자동설정이 어떤 조건에 의해 설정되고 설정안되었는지 정보
+		* configprops : application.properties에 정의가 가능한 것들 
+		* httptrace : 최근 100개의 http 요청과 응답 정보
+		* logger : 패키지의 로깅레벨
+		* matrics : application의 핵심 정보 ( app이 사용하는 메모리, cpu 등)
+		* mappings : controller 매핑 정보
+		* shotdown (유일하게 비활성화 되어있다.) 
+		등등
+		```	
+2. Spring-boot-admin
+	- [참고](https://jaehyun8719.github.io/2019/06/20/springboot/admin/)
+	
+
