@@ -8,7 +8,7 @@
 
 2. [Spring-boot 구조 및 원리](https://github.com/hwangyoungjin/Spring-Web-MVC#Spring-boot-구조-및-원리)
 
-3. [Spring-boot-mvc](https://github.com/hwangyoungjin/Spring-Web-MVC)
+3. [Spring-boot-mvc](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-boot-web-mvc)
 
 4. [Spring-boot-data](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-boot-data)
 
