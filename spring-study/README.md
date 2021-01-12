@@ -36,7 +36,7 @@
 	  - SearchController
 	``` 
 
-	1. restTemplate 사용
+	1. #### **restTemplate 사용**
 		- RestClicent 사용하기 위해 의존성 추가
 		```java
 		implementation 'org.apache.httpcomponents:httpclient:4.5'
@@ -61,9 +61,9 @@
 		}
 		```
 
-	2. Active Profiles
+	2. #### **Active Profiles**
 
-	3. Config 설정
+	3. #### **Config 설정**
 		- naver api를 사용하기 위하여 prefix를 naver.openapi로 설정
 		```java
 		@Getter
@@ -77,7 +77,7 @@
 		}
 		```
 
-	4. 영화 검색 서비스 구현하기
+	4. #### **영화 검색 서비스 구현하기**
 		- 네이버 오픈 api의 결과를 응답받을 수 있는 객체를 정의
 		```java
 		@Getter
