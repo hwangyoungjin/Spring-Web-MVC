@@ -31,8 +31,8 @@
 
 
 * 질문사항
-ResponseMovie없이
-
+1. ResponseMovie없이 Movie객체로 응답 받을 수 는 없는건지?
+2. 아래 Logic이 맞는지
 ```
 ```java
 * 환경
@@ -41,7 +41,7 @@ ResponseMovie없이
 - gradle
 ```
 - #### **API 서버의 시스템 구성도**
-<img src="https://user-images.githubusercontent.com/60174144/104263075-2d991200-54cc-11eb-8d38-b81ec79e5e05.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/60174144/104416698-927d6680-55b7-11eb-870b-7d8be4e94696.png" width="70%" height="70%">
 
 1. ### **[네이버 오픈 API 활용하기](https://developers.naver.com/docs/common/openapiguide/apilist.md#%EA%B2%80%EC%83%89)**
 	- 사용 api : **검색**
