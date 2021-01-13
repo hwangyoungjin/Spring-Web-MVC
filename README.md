@@ -2,7 +2,7 @@
 ## 스프링, 스프링부트 내용정리
 ---
 
-###목차
+## 목차
 ---
 1. [Spring 개념](https://github.com/hwangyoungjin/Spring-Web-MVC#Spring-개념)
 
@@ -20,7 +20,7 @@
 
 8. [Spring-study](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-study/README.md)
 
-#Spring 개념
+## Spring 개념
 ---
 1. 인텔리제이 - SpringBoot, Thymeleaf 프로젝트생성
 

@@ -4,6 +4,21 @@
 ## [간단한 API서버 만들기](https://brunch.co.kr/@springboot/531)
 ---
 ```java
+* 과제
+1. Annotation 정리
+  -
+  -
+  -
+  -
+  -
+  -
+
+2. DI에 대해서
+
+
+
+```
+```java
 * 환경
 - 2.3.7 RELEASE
 - Lombok의존성 추가 
@@ -23,7 +38,7 @@
 	  - HttpClientConfig
 	  - NaverProperies
 	* model
-	  - Movie
+	  - Movie [test용 - test완료]
 	  - ReponseMovie
 	     - Item
 	* Service
