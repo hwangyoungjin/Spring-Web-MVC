@@ -94,7 +94,8 @@
 		```
 
 	2. #### **Active Profiles**
-
+		- Naver OpenAPI를 호출하기 위해 필요한 정보
+		- resource 안 application-sercre.properties에 추가 (**git.ignore**)
 	3. #### **Config 설정**
 		- naver api를 사용하기 위하여 prefix를 naver.openapi로 설정
 		```java
