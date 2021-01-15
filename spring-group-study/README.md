@@ -1,22 +1,54 @@
 # [Spring-boot Study](https://brunch.co.kr/@springboot/530)
 ---
-# 1주차
-## [간단한 API서버 만들기](https://brunch.co.kr/@springboot/531)
+
+### 목차
+1. 1주차 : [간단한 API서버 만들기](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-group-study/README.md#1주차)
+
+## 1주차
+### [간단한 API서버 만들기](https://brunch.co.kr/@springboot/531)
 ---
 ```java
 * 과제
 1. Annotation 정리
-  * Spring web
-    - @RestController
-    - @RequestMapping
-    - @GetMapping
+  * @Component : 개발자가 직접 작성한 class를 스프링 IoC Container에 Bean으로 등록하기 위한 어노테이션 
+    - @Repository : DB나 file같은 외부 I/O를 처리하는 클래스에 사용하여 Bean으로 등록
+    - @Service : 웹 내부에서 서비스를 처리하는 클래스에 사용하여 Bean으로 등록
+    - @Controller : 웹요청과 응답을 처리하는 클래스에 사용하여 Bean으로 등록
+    - @Configuration : 스프링 IoC Container에게 해당 클래스가 Bean구성 class임을 알려주는 어노테이션
+        
+  * 외부설정
+    - @ConfigurationProperties : 자바 Bean 스펙을 따라서 *.properties , *.yml 파일에 있는 값을 해당 어노테이션 붙은 클래스에 Getter, Setter를 이용하여 필드값의 바인딩 해준다.
+	1. 사용하기 위해선 configuration-processor 의존성 추가필요
+	2. @Configuration과 같이 사용
+	3. prefix="name" 사용시 *.properties에서 해당"name"으로 시작하는 값만 클래스 field에 바인딩 된다.
 
-  * @Component
-    - @Repository
-    - @Service
-    - @Controller
-    - @Configuration
-        - @ConfigurationProperties
+  * Spring web
+    - @RequsetBody :  요청본문에 들어있는 데이터를 HttpMessageConverter를 통해 자바 객체로 받아올 때 사용
+	1. @Valid or @Validated를 사용하여 값 검증 가능
+	2. BindingResult 아규먼트를 사용해 코드로 바인딩 또는 검증 에러를 확인 가능
+
+    - @ResponseBody : 자바 객체의 데이터를 HttpMessageConverter를 사용해 응답 본문 메시지로 변환하여 보낼 때 사용
+
+    - @RestController : @Controller 어노테이션과 @ResponseBody 어노테이션을 합쳐놓은 어노테이션 
+	1. 자동으로 모든 핸들러 메소드에 @ResponseBody 적용하여 메소드마다 선언하지 않아도 된다.
+	2. @Controller는 viewPage를 반환하지만 @RestController는 객체를 반환하면 변환되어 바로 응답으로
+
+    - @RequestMapping : 스프링 웹 MVC에서 HttpMethod 맵핑하는 Annotation
+	1. class,method Level에서 사용
+	2. class에 선언되어 있다면 선언한  url 패턴뒤에 이어 붙여서 맵핑
+	3. 특정 HttpMethod 설정
+	  Ex> @RequestMapping(method = RequestMethod.GET)
+	3. 특정한 타입의 데이터 담고 있는 요청만 처리하는 핸들러의 경우
+	  Ex> @RequestMapping(consumes=MediaType.APPLICATION_JSON_UTF8_VALUE)
+	4. 특정한 타입의 응답을 만드는 핸들러의 경우
+	  Ex> @RequesMapping(produces="application/json")
+	5. 특정한 헤더가 있는 요청을 처리하고 싶은 경우
+	  Ex> @RequesMapping(headers="key")
+	6. 특정한 요청 매개변수 키를 가지고 있는 요청을 처리하고 싶은 경우
+	  Ex> @RequesMapping(params="a")
+	 
+    - @GetMapping : @RequestMapping과 동일 하지만 GET요청만 맵핑한다.
+	- 이외 에도 @PostMapping, @PutMapping, @DeleteMapping 등등 있다.
 
   * Lombok
     - @Getter
@@ -33,6 +65,7 @@
 * 질문사항
 1. ResponseMovie없이 Movie객체로 응답 받을 수 는 없는건지?
 2. 아래 Logic이 맞는지
+3. @ConfigurationProperties(prefix="naver.openapi") 는 application.properties의 naver.openapi.movieUrl=https://openapi.naver.com/v1/search/movie.json 만 있으므로 NaverProperties에 movieUrl 필드값을 위해서 선언한것이 맞는지 바인딩 되는것이 맞는지 
 ```
 ```java
 * 환경
@@ -102,11 +135,12 @@
 		@Getter
 		@Setter
 		@Configuration
-		@ConfigurationProperties(prefix = "naver.openapi")
+		@ConfigurationProperties(prefix = "naver.openapi") 
+		//*.properties에서 앞에 naver.openapi로 시작하는 값만 가져와서 바인딩
 		public class NaverProperties {
-		    private String movieUrl;
-		    private String clientId;
-		    private String clientSecret;
+		    private String movieUrl; //application.properties에 있는 value에 해당
+		    private String clientId; //application-secret.properties에 있는 value에 해당
+		    private String clientSecret; //application-secret.properties에 있는 value에 해당
 		}
 		```
 
