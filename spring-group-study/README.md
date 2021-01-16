@@ -7,9 +7,8 @@
 ## 1주차
 ### [간단한 API서버 만들기](https://brunch.co.kr/@springboot/531)
 ---
+### 1. Annotation 정리 
 ```java
-* 과제
-1. Annotation 정리
   * @Component : 개발자가 직접 작성한 class를 스프링 IoC Container에 Bean으로 등록하기 위한 어노테이션 
     - @Repository : DB나 file같은 외부 I/O를 처리하는 클래스에 사용하여 Bean으로 등록
     - @Service : 웹 내부에서 서비스를 처리하는 클래스에 사용하여 Bean으로 등록
@@ -50,22 +49,35 @@
     - @GetMapping : @RequestMapping과 동일 하지만 GET요청만 맵핑한다.
 	- 이외 에도 @PostMapping, @PutMapping, @DeleteMapping 등등 있다.
 
-  * Lombok
-    - @Getter
-    - @Setter
-    - @Data
-    - @Builder
-    - @AllArgsConstructor
-    - @NoArgsConstructor
+  * Lombok : 반복적으로 만드는 코드를 어노테이션을 통해 줄여 주는 라이브러리
+    - @Getter & @Setter : 필드에 접근자와 설정자를 자동으로 생성해준다.
+	1. 클래스 레벨에 설정하는 경우 모든 필드에 접근자와 설정자가 자동으로 생성
+ 
+    - @Builder : Class에 대한 복잡한 Builder API들을 자동으로 생성
+	1. 클래스, 생성자, 메서드 레벨에서 사용가능
+	2. 빌더패턴 : 객체 생성할때 사용되는 패턴 - 참고 : https://jh-7.tistory.com/3
+ 
+    - @AllArgsConstructor : 모든 필드 값을 파라미터로 받는 생성자를 만들어준다.
+    - @NoArgsConstructor : 파라미터가 없는 기본 생성자를 생성해준다.
+    - @Data : @Getter, @Setter, @RequireArgsConstuctor, @ToString, @EqualsAndHashCode를 한꺼번에 설정해준다.
+```
+### 2. DI (Dependenct Injection) : '의존성 주입'에 대해서
+```java 
+* IoC (Inversion of Control) : DI라고도 하며 어떤 객체가 사용하는 의존 객체를 직접 만들어 사용하는게 아니라 주입 받아 사용하는 방법을 말한다.
+* IoC Container : 애플리케이션 컴포넌트의 중앙 저장소로 빈 설정 소스로 부터 빈 정의를 읽어들이고, 빈을 구성하고 제공한다.
+	
+* DI 장점
+  1. 의존성 주입으로 인해 모듈 간의 결합도가 낮아지고 유연성이 높아진다.
+  2. 재사용성이 증가한다.
+  3. 더 많은 테스트 코드 만들 수 있다.
+  4. 코드 읽기가 쉬워진다.
+```
+<img src="https://user-images.githubusercontent.com/60174144/104797462-8ab10280-5801-11eb-90a0-8ff3a5988eec.png" width="70%" height="70%">
 
-2. DI에 대해서
-
-
-
+```java
 * 질문사항
 1. ResponseMovie없이 Movie객체로 응답 받을 수 는 없는건지?
 2. 아래 Logic이 맞는지
-3. @ConfigurationProperties(prefix="naver.openapi") 는 application.properties의 naver.openapi.movieUrl=https://openapi.naver.com/v1/search/movie.json 만 있으므로 NaverProperties에 movieUrl 필드값을 위해서 선언한것이 맞는지 바인딩 되는것이 맞는지 
 ```
 ```java
 * 환경
@@ -154,6 +166,10 @@
 		public class ResponseMovie {
 		    private List<Item> items;
 		
+		    @Getter
+		    @Setter
+		    @AllArgsConstructor
+		    @NoArgsConstructor			
 		    public static class Item{
 		        private String title;
 		        private String link;
@@ -290,6 +306,7 @@
 		}
 		```
 		- <img src="https://user-images.githubusercontent.com/60174144/104404088-386fa780-559d-11eb-9ba3-220deb1ce049.png" width="70%" height="70%">
+	
 	6. #### **영화 데이터 전부 가져올 수 있도록 필드 추가**
 		- Movie, ResponseMovie의 item의 필드 추가
 		```java
