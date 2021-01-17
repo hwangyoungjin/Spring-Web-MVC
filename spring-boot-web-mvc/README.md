@@ -96,6 +96,20 @@
 	: 빌드의 단계 중 컴파일이 포함이 되어 있는데 컴파일은 빌드의 부분집합이라 할 수 있다.
 	: 빌드를 도와주는 빌드 툴 :  Ant, Maven, Gradle 등
 	: 빌드 툴은 전처리(preprocessing), 컴파일(Compile), 패키징(packaging), 테스팅(testing), 배포(distribution)를 지원
+
+	* JVM (Java Virtual Machine)
+	: 바이너리 코드를 읽고 검증하고 실행한다.
+	: 컴파일된 바이너리코드는 어떤 JVM에서도 실행할 수 있다.
+	: 리눅스의 JVM과 윈도우의 JVM은 다르다 (JVM은 플랫폼의 의존적)
+	
+	* JRE (Java Runtime Environment)
+	: JVM이 자바 프로그램을 동작시킬 때 필요한 라이브러리 파일들과 기타파일들을 가지고 있다.
+	: JVM의 실행 환경을 구현했다고 할 수 있다.
+
+	* JDK (java Development Kit)
+	: JRE + 개발을 위해 필요한 도구(컴파일러 : javac, java)들을 포함한다.
+	    - javac : 소스파일 -> 바이트코드 변환하는 컴파일러
+	    - java : 소스파일
 	```
 5. 스프링 웹 mvc 5부
 	- 스프링부트는 client에서 사용하는 라이브러리(jquery, bootstap, ReactJS 등등)  jar파일로 추가가능
