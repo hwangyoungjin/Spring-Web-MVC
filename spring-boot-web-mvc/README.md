@@ -1,6 +1,6 @@
 ## Springboot-mvc
 ---
-0. Junit test 부분
+0. ### Junit test 부분
 	- Junit4 에서 Runwith안되는 경우 Spring boot stater parent버전 2.2.4.RELEASE로 맞추기
 	- Junit test에서 
 	```java
@@ -36,9 +36,11 @@
 	[해결] Matchers class 사용
 	.andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("young")));
 	```
-1. 스프링 웹 mvc 1부
+
+1. ### 스프링 웹 mvc 1부
 	- 스프링 mvc 와 스프링부트 mvc 비교
-2. 스프링 웹 mvc 2부
+
+2. ### 스프링 웹 mvc 2부
 	-  RestController에 json데이터로 Post 테스트하기(JUnit4)
 	```java
 	[UserController.java]
@@ -74,9 +76,11 @@
 	                    .andExpect(MockMvcResultMatchers.jsonPath("$.password").value("123"));
 	    }
 	```
-3. 스프링 웹 mvc 3부
+
+3. ### 스프링 웹 mvc 3부
 	- ViewResolver
-4. 스프링 웹 mvc 4부
+
+4. ### 스프링 웹 mvc 4부
 	- 정적리소스 지원
 		- 기본리소스 classpath 제공
 		- WebMvcConfiguration의 addResourceHandlers로 핸들러 추가 가능
@@ -111,14 +115,17 @@
 	    - javac : 소스파일 -> 바이트코드 변환하는 컴파일러
 	    - java : 소스파일
 	```
-5. 스프링 웹 mvc 5부
+
+5. ### 스프링 웹 mvc 5부
 	- 스프링부트는 client에서 사용하는 라이브러리(jquery, bootstap, ReactJS 등등)  jar파일로 추가가능
 	- [Maven 중앙저장소](https://mvnrepository.com/)에서 해당 의존성 pop.xml에 추가
-6. 스프링 웹 mvc 6부
+
+6. ### 스프링 웹 mvc 6부
 	- 스프링의 root url "/" 은 기본적으로 index.html 이므로 기본 resource directory에 index.html 파일을 넣는다.
 	- 파비콘은 favicon.icon 확장자로 기본 resource directory에 넣는다.
 		- cache때문에 변경 안 될 수 있다. /favicon.ico 요청 후 다시 localhost 요청시 해결가능
-7. 스프링 웹 mvc 7부
+
+7. ### 스프링 웹 mvc 7부
 	- 스프링부트가 지원하는 템플릿 엔진 중 하나인 Thymeleaf 사용하기
 		1. pom.xml에 Thymeleaf 의존성 추가
 		```java
@@ -129,18 +136,21 @@
 		```
 		2. 모든 동적으로 생성하는 view는 /src/main/resources/template/ 에 넣는다.
 			- **Thymeleaf 템플릿 엔진(servlet Container와 독립적)이 이를 처리**
-8. 스프링 웹 mvc 8부 
+
+8. ### 스프링 웹 mvc 8부 
 	- HtmlUnit
-9. 스프링 웹 mvc 9부
+
+9. ### 스프링 웹 mvc 9부
 	- ExceptionHandler
 		- 스프링부트가 제공하는 기본 예외처리 핸들러 **BasicErrorController**
 		- 커스터마이징 : BasicErrorController를 상속받아 구현하기
 	- 커스텀 에러 페이지
 		- status code 별로 resource/static/error Or resource/template/error에 페이지 구성
 		- 페이지 명은 status code 이름으로 만든다. (Ex> 404.html)
-10. 스프링 웹 mvc 10부
+
+10. ### 스프링 웹 mvc 10부
 	- SpringHATEOAS 아직이해X
-11. 스프링 웹 mvc 11부
+11. ### 스프링 웹 mvc 11부
 	- CORS : Cross-Origin-Resource-Sharing
 		- 서로다른 origin끼리 Resource Sharing 가능
 		- Sharing 해주는 쪽(port: 8080) @Controller Or @RequestMapping 쪽에 @CrossOrigin(oring정보:18080) 입력

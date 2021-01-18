@@ -1,14 +1,16 @@
-# [Spring-boot Study](https://brunch.co.kr/@springboot/530)
+# [Spring-boot Study](https://github.com/sieunkr/spring-study-group)
 ---
 
 ### 목차
 1. 1주차 : [간단한 API서버 만들기](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-group-study/README.md#1주차)
+2. 2주차 : [스프링부트 AutoConfiguration](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-group-study/README.md#2주차)
 
 ## 1주차
 ### [간단한 API서버 만들기](https://brunch.co.kr/@springboot/531)
 ---
 ### 1. Annotation 정리 
 ```java
+  * @ComponentScan : Bean 설정을 위해 스캔할 범위를 지정
   * @Component : 개발자가 직접 작성한 class를 스프링 IoC Container에 Bean으로 등록하기 위한 어노테이션 
     - @Repository : DB나 file같은 외부 I/O를 처리하는 클래스에 사용하여 Bean으로 등록
     - @Service : 웹 내부에서 서비스를 처리하는 클래스에 사용하여 Bean으로 등록
@@ -61,7 +63,7 @@
     - @NoArgsConstructor : 파라미터가 없는 기본 생성자를 생성해준다.
     - @Data : @Getter, @Setter, @RequireArgsConstuctor, @ToString, @EqualsAndHashCode를 한꺼번에 설정해준다.
 ```
-### 2. DI (Dependenct Injection) : '의존성 주입'에 대해서
+### 2. DI (Dependenct Injection) : '의존성 주입'에 대해서[Ioc & DI의 개념 & Bean생성방법](https://brunch.co.kr/@springboot/532)
 ```java 
 * IoC (Inversion of Control) : DI라고도 하며 어떤 객체가 사용하는 의존 객체를 직접 만들어 사용하는게 아니라 주입 받아 사용하는 방법을 말한다.
 * IoC Container : 애플리케이션 컴포넌트의 중앙 저장소로 빈 설정 소스로 부터 빈 정의를 읽어들이고, 빈을 구성하고 제공한다.
@@ -85,11 +87,11 @@
 - Lombok의존성 추가 
 - gradle
 ```
-- #### **API 서버의 시스템 구성도**
-<img src="https://user-images.githubusercontent.com/60174144/104416698-927d6680-55b7-11eb-870b-7d8be4e94696.png" width="70%" height="70%">
 
 1. ### **[네이버 오픈 API 활용하기](https://developers.naver.com/docs/common/openapiguide/apilist.md#%EA%B2%80%EC%83%89)**
 	- 사용 api : **검색**
+	- #### **API 서버의 시스템 구성도**
+	- <img src="https://user-images.githubusercontent.com/60174144/104416698-927d6680-55b7-11eb-870b-7d8be4e94696.png" width="70%" height="70%">
 
 
 2. ### **API 서버 구축하기**
@@ -344,3 +346,43 @@
 		}
 		```
 		- <img src="https://user-images.githubusercontent.com/60174144/104413722-2fd59c00-55b2-11eb-9144-857fec57f751.png" width="70%" height="70%">
+
+## 2주차
+### [스프링부트 AutoConfiguration](https://brunch.co.kr/@springboot/533)
+---
+1. ### 스프링 AutoConfiguration                                  
+	1. #### 스프링부트 @SpringBootApplication
+	```java
+	@SpringBootApplication에는 3가지 Annotation이 포함되어 있다.
+	  - @EnableAutoConfiguration : 스프링부트의 AutoConfiguration을 사용하겠다는 어노테이션
+	  - @SpringBootConfiguration : 스프링부트에서 @Configuration을 대체하는 스프링부트 필수 어노테이션
+	  - @ComponentScan : 해당 어노테이션 이하 파일에서 등록할 Bean 스캔
+
+	* 참고 Annotation
+	1. @Conditional : 스프링IoC컨테이너에 조건부로 Bean등록하는 역할 가능하다.
+	  - @ConditionOnClass(*.class) : classpath에 해당(*)클래스가 존재하면 Bean등록 (즉, 의존성으로 들어와 있다면 해당 로직 수행된다.)
+	  - @ConditionOnMissingClass(*.class) : 해당(*)클래스가 없다면 Bean등록
+	  - @ConditionOnBean(*.class) : 해당 Bean(*)이 존재하면 Bean으로 등록
+	  - @ConditionOnMissingBean(*.class) : 해당(*)Bean이 없다면 Bean등록
+	```
+	2. #### @EnableAutoConfiguration의 역할
+	```java
+	스프링부트에서 Bean을 읽을 때 2단계로 읽혀진다
+	1단계. @ComponentScan ()
+	2단계. @EnableAutoConfiguration
+	
+	* @EableAutoConfiguration은
+	External Library인 org.springframework.boot.autoconfigure.EnableAutoConfiguration 의
+	spring.factoriese에 있는 항목(class)들을 Scan 후 Bean으로 등록하여 자동설정
+	```
+	3. #### 자동설정을 application.properties를 통해 커스터마이징하기
+	```java
+	1. @EableAutoConfiguration이 등록한 자동설정의 Bean을 사용할때
+	2. 대부분의 Bean Class는 등록된 properties(class)를 읽어온다 
+	3. properties(class)에는 @ConfigurationProperties를 사용하여 prefix가 정해져있다.
+	4. 따라서 application.properties를 활용하여 코드에 큰 수정없이 prefix값으로 커스터마이징 가능  
+	```
+2. ### 과제
+	1. 임베디드 톰캣의 쓰레드 풀 사이즈 변경
+	2. naver open API를 통해 영화검색서비스 응답 데이터 필드 모두 추가 + 평점이 0인 데이터는 제외하기
+	3. naver open API를 통해 영화 외 다른 검색서비스 추가
