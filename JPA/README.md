@@ -61,6 +61,65 @@
 			```
 
  	2. #### 엔티티 타입 맵핑
+		```java
+		 - @Entity
+		    1. JPA를 사용해서 테이블과 매핑할 클래스는 @Entity 어노테이션을 필수
+		    2. @Entity가 붙은 클래스는 JPA가 관리
+		    3. 엔티티라 부른다.
+		 - @Table
+		    1. 엔티티와 매핑할 테이블을 지정합니다.
+		    2. 생략하면 매핑한 엔티티 이름(@Entity가 붙은 class명)을 테이블 이름으로 사용합니다.
+		 - @Id
+		    1. 엔티티의 주키를 맵핑할때 사용
+		 - @GeneratedValue
+		    1. 주키의 생성 방법을 맵핑
+		    2. 생성 전략과 생성기 설정가능 (4가지)
+                                 : 기본 전략을 AUTO로 null들어가면 자동증가
+		 - @Column
+		    1. 해당 애노테이션으로 필드 속성 값 지정가능
+		    2. class level에 @Entity있는 경우 생략가능	
+		 - @Temporal
+		    1. java.util.Data 와 java.util.Calender만 지원
+		 - @Transient
+		    1. column으로 사용하고 싶지 않은 경우 사용
+		 - JPA 로거 (아래 2개를 세트로 많이  사용)
+		    - spring.jap.show-sql=true // 실행되는 sql 확인가능 
+		    - spring.jpa.properties.hibernate.format_sql=true // 실행되는 sql 깔끔하게
+		```
+ 	3. #### Value 타입 맵핑
+		- 엔티티 타입과 Value 타입 분류
+		- Value 타입에는 3가지
+			1. 기본타입
+			2. Composite Value 타입
+			3. Collection Value 타입
+		- Composite Value 타입
+			1. @Embeddable
+			2. @Embedd
+			3. @AttributeOverrides
+			4. @AttributeOverride
+			```java
+			@Entity
+			public class Account {
+
+			    @Id @GeneratedValue
+			    private Long id;
+			    @Column(nullable = false)
+			    private String username;
+			    private String password;
+			
+			    @Embedded
+			    private Address homeAddress;
+			}
+			----------------------------------------
+			@Embeddable
+			public class Address {
+
+			    private String street;
+			    private String city;
+			}
+			```
+	4. #### 1 : n  / n : m 맵핑
+		- 따로 메모
 	
 	
 	

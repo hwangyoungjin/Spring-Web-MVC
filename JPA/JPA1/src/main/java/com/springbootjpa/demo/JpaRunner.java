@@ -1,6 +1,9 @@
 package com.springbootjpa.demo;
 
 import com.springbootjpa.demo.model.Account;
+import com.springbootjpa.demo.model.Course;
+import com.springbootjpa.demo.model.Student;
+import com.springbootjpa.demo.model.Study;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -20,13 +23,31 @@ public class JpaRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Account account = new Account();
+        Account account = new Account(); // account 객체 생성
         account.setUsername("young");
         account.setPassword("pass");
+
+        Study study = new Study(); // study 객체 생성
+        study.setName("study");
+
+        study.setOwner(account); // study 객체에 account 연결
+        account.getStudies().add(study); // account 객체에 study 추가
+
+        Study study1 = new Study();
+        study1.setOwner(account);
+        study1.setName("study1");
+        account.getStudies().add(study1);
+
         entityManager.persist(account);
-        Account account2 = new Account();
-        account2.setUsername("second");
-        account2.setPassword("pass");
-        entityManager.persist(account2);
+
+
+        Student student = new Student();
+        Course course = new Course();
+
+        student.getLikedCourses().add(course);
+        course.getLikes().add(student);
+
+        entityManager.persist(student);
+
     }
 }
