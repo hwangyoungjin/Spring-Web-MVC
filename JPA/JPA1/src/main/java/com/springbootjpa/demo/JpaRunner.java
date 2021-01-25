@@ -4,6 +4,8 @@ import com.springbootjpa.demo.model.Account;
 import com.springbootjpa.demo.model.Course;
 import com.springbootjpa.demo.model.Student;
 import com.springbootjpa.demo.model.Study;
+import com.springbootjpa.demo.repository.AccountJpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -21,8 +23,12 @@ public class JpaRunner implements ApplicationRunner {
     EntityManager entityManager; //jpa의 핵심 (스프링의 핵심인 applicationContext 처럼)
     //해당 클래스를 통해 db 영속화(저장) 가능
 
+    @Autowired
+    AccountJpaRepository accountJpaRepository;
+
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
         Account account = new Account(); // account 객체 생성
         account.setUsername("young");
         account.setPassword("pass");
@@ -37,17 +43,19 @@ public class JpaRunner implements ApplicationRunner {
         study1.setOwner(account);
         study1.setName("study1");
         account.getStudies().add(study1);
-
         entityManager.persist(account);
 
+        System.out.println("============================");
+        accountJpaRepository.findAll().forEach(System.out::println);
 
-        Student student = new Student();
-        Course course = new Course();
 
-        student.getLikedCourses().add(course);
-        course.getLikes().add(student);
-
-        entityManager.persist(student);
+//        Student student = new Student();
+//        Course course = new Course();
+//
+//        student.getLikedCourses().add(course);
+//        course.getLikes().add(student);
+//
+//        entityManager.persist(course);
 
     }
 }

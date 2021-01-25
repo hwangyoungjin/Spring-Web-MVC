@@ -383,6 +383,9 @@
 	4. 따라서 application.properties를 활용하여 코드에 큰 수정없이 prefix값으로 커스터마이징 가능  
 	```
 2. ### 과제
-	1. 임베디드 톰캣의 쓰레드 풀 사이즈 변경
+	1. #### 임베디드 톰캣의 쓰레드 풀 사이즈 변경
+		```java
+		server.tomcat.threads.max=200 // application.properties에서 변경
+		```
 	2. naver open API를 통해 영화검색서비스 응답 데이터 필드 모두 추가 + 평점이 0인 데이터는 제외하기
 	3. naver open API를 통해 영화 외 다른 검색서비스 추가

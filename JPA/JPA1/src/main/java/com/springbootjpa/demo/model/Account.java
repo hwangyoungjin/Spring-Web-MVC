@@ -15,7 +15,7 @@ public class Account {
     private String username;
     private String password;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
     private Set<Study> studies = new HashSet<>();
 
     public Set<Study> getStudies() {
@@ -35,6 +35,9 @@ public class Account {
     }
 
     @Embedded
+    @AttributeOverrides({
+            @AttributeOverride(name = "street", column = @Column(name="home_street"))
+    })
     private Address homeAddress;
 
 
