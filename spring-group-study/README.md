@@ -1,4 +1,4 @@
-# [Spring-boot Study](https://github.com/sieunkr/spring-study-group)
+ # [Spring-boot Study](https://github.com/sieunkr/spring-study-group)
 ---
 
 ### 목차
@@ -159,7 +159,7 @@
 		```
 
 	4. #### **영화 검색 서비스 구현하기**
-		- 네이버 오픈 api의 결과를 응답받을 수 있는 객체를 정의
+		- 네이버 오픈 api의 결과를 받아 바인딩할 객체 정의
 		```java
 		@Getter
 		@Setter
@@ -184,6 +184,17 @@
 
 		*Lombok Annotation 인텔리제이에서 자동추가 안되는 문제
 		-> 직접 import lombok.Annotation; 해줌으로써 해결
+		```
+
+		- 직접 사용할 Movie 객체 정의
+		```java
+		@Builder
+		@Getter
+		public class Movie implements Serializable {
+		    private String title;
+		    private String link;
+		    private float userRating;
+		}
 		```
 
 		- MovieRepository 인터페이스 정의
@@ -273,16 +284,8 @@
 			- 평점 순 정렬기능 제공X
 
 	5. #### **영화 검색 서비스 평점 순 정렬 기능 추가**
-		- Movie, MovieGroup model 추가
+		- MovieGroup model 추가 해서 정렬기능 만들기
 		```java
-		@Builder
-		@Getter
-		public class Movie implements Serializable {
-		    private String title;
-		    private String link;
-		    private float userRating;
-		}
-		********************
 		public class MovieGroup {
 		    private final List<Movie> list;
 		    public MovieGroup(final List<Movie> list){

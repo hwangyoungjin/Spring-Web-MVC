@@ -29,10 +29,10 @@ public class MovieRepositoryImpl implements MovieRepository {
         String url = naverProperties.getMovieUrl()+"?query=" + query;
 
         return restTemplate.exchange(url, HttpMethod.GET, new HttpEntity<>(httpHeaders), ResponseMovie.class)
-                .getBody()
-                .getItems()
-                .stream()
-                .map(m->Movie.builder()
+                .getBody() //응답 본문이 ResponseMovie로 바인딩 된다.
+                .getItems() // ResponseMovie의 item
+                .stream() // stream으로 다루기
+                .map(m->Movie.builder() // ResponseMovie에 있는 데이터를 Movie 객체로 넣기
                     //titile, link, userRating, image, pubDate, actor, director
                     .title(m.getTitle())
                     .link(m.getLink())
@@ -42,6 +42,6 @@ public class MovieRepositoryImpl implements MovieRepository {
                         .actor(m.getActor())
                         .director(m.getDirector())
                         .build())
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()); //List<Movie> 로 return
     }
 }
