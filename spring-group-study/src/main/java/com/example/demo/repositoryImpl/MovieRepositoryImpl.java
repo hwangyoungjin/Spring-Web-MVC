@@ -20,6 +20,12 @@ public class MovieRepositoryImpl implements MovieRepository {
     private RestTemplate restTemplate;
     @Autowired
     private NaverProperties naverProperties;
+
+    public MovieRepositoryImpl(RestTemplate restTemplate, NaverProperties naverProperties){
+        this.restTemplate = restTemplate;
+        this.naverProperties = naverProperties;
+    }
+
     @Override
     public List<Movie> findByQuery(String query) {
         HttpHeaders httpHeaders = new HttpHeaders();

@@ -15,6 +15,10 @@ public class MovieService {
     @Autowired
     MovieRepository movieRepository;
 
+    public MovieService(MovieRepository movieRepository){
+        this.movieRepository = movieRepository;
+    }
+
 
     public List<Movie> search(final String query){
         MovieGroup movieGroup = new MovieGroup(movieRepository.findByQuery(query));
