@@ -18,7 +18,7 @@
 
 7. [Spring-boot-운영](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-boot-production/README.md)
 
-8. [Spring-group-study](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-group-study/README.md)
+8. [Spring-group-study](https://github.com/hwangyoungjin/SpringGroupStudy)
 
 ## Spring 개념
 ---
