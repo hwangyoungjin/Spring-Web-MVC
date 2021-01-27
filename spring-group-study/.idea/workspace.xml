@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c7148a6a-49c4-4070-9942-22a623c48447" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="org.springframework.boot:spring-boot-starter-test:2.3.7.RELEASE" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="demo" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
+                <item name="org.springframework.boot:spring-boot-starter-test:2.3.7.RELEASE" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+                <item name="jakarta.xml.bind:jakarta.xml.bind-api:2.3.3" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1mreXrP9BUqqTbtYL8COlhT8WtC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../SpringGroupStudy" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.demo.service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\중앙대학교\전공 공부\Spring(스프링) - 인프런\프로젝트\스프링 MVC 활용\spring-study\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.MovieServiceTest">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MovieServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;com.example.demo.service.MovieServiceTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <option name="ACTIVE_PROFILES" value="secret" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.MovieServiceTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c7148a6a-49c4-4070-9942-22a623c48447" name="Default Changelist" comment="" />
+      <created>1610256183264</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610256183264</updated>
+      <workItem from="1610256189949" duration="1016000" />
+      <workItem from="1610416703831" duration="1444000" />
+      <workItem from="1610418394853" duration="6018000" />
+      <workItem from="1610425378571" duration="2967000" />
+      <workItem from="1610433712530" duration="998000" />
+      <workItem from="1610465190264" duration="17000" />
+      <workItem from="1610507888033" duration="4635000" />
+      <workItem from="1610518176027" duration="1143000" />
+      <workItem from="1610697537136" duration="889000" />
+      <workItem from="1610862170142" duration="937000" />
+      <workItem from="1610951379898" duration="1530000" />
+      <workItem from="1611055931660" duration="1000000" />
+      <workItem from="1611120164037" duration="105000" />
+      <workItem from="1611410450711" duration="809000" />
+      <workItem from="1611464833376" duration="1525000" />
+      <workItem from="1611546449862" duration="1139000" />
+      <workItem from="1611645149270" duration="1376000" />
+      <workItem from="1611712711019" duration="4633000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="4" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610423271856">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="4" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610423271856" />
+    <state x="299" y="89" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610423888340">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="299" y="89" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610423888340" />
+    <state x="354" y="0" key="#com.intellij.ide.util.MemberChooser" timestamp="1611713331925">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="354" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611713331925" />
+    <state x="354" y="0" key="#com.intellij.ide.util.MemberChooser/0.0.1097.577@0.0.1097.577" timestamp="1610509205991" />
+    <state x="0" y="212" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1610418572669">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="0" y="212" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610418572669" />
+    <state x="331" y="156" width="435" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1610509120051">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="331" y="156" width="435" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1097.577@0.0.1097.577" timestamp="1610509120051" />
+    <state x="279" y="128" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1610417979600">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="279" y="128" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610417979600" />
+    <state x="329" y="44" key="FileChooserDialogImpl" timestamp="1611723465703">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="329" y="44" key="FileChooserDialogImpl/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611723465703" />
+    <state width="1054" height="44" key="GridCell.Tab.0.bottom" timestamp="1611723479385">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="44" key="GridCell.Tab.0.bottom/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611723479385" />
+    <state width="1054" height="28" key="GridCell.Tab.0.bottom/0.0.1097.577@0.0.1097.577" timestamp="1610522114676" />
+    <state width="1054" height="44" key="GridCell.Tab.0.center" timestamp="1611723479384">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="44" key="GridCell.Tab.0.center/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611723479384" />
+    <state width="1054" height="28" key="GridCell.Tab.0.center/0.0.1097.577@0.0.1097.577" timestamp="1610522114676" />
+    <state width="1054" height="44" key="GridCell.Tab.0.left" timestamp="1611723479384">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="44" key="GridCell.Tab.0.left/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611723479384" />
+    <state width="1054" height="28" key="GridCell.Tab.0.left/0.0.1097.577@0.0.1097.577" timestamp="1610522114675" />
+    <state width="1054" height="44" key="GridCell.Tab.0.right" timestamp="1611723479384">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="44" key="GridCell.Tab.0.right/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611723479384" />
+    <state width="1054" height="28" key="GridCell.Tab.0.right/0.0.1097.577@0.0.1097.577" timestamp="1610522114676" />
+    <state width="1054" height="28" key="GridCell.Tab.1.bottom" timestamp="1610522114676">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="380" key="GridCell.Tab.1.bottom/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610425344495" />
+    <state width="1054" height="28" key="GridCell.Tab.1.bottom/0.0.1097.577@0.0.1097.577" timestamp="1610522114676" />
+    <state width="1054" height="28" key="GridCell.Tab.1.center" timestamp="1610522114676">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="380" key="GridCell.Tab.1.center/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610425344495" />
+    <state width="1054" height="28" key="GridCell.Tab.1.center/0.0.1097.577@0.0.1097.577" timestamp="1610522114676" />
+    <state width="1054" height="28" key="GridCell.Tab.1.left" timestamp="1610522114676">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="380" key="GridCell.Tab.1.left/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610425344495" />
+    <state width="1054" height="28" key="GridCell.Tab.1.left/0.0.1097.577@0.0.1097.577" timestamp="1610522114676" />
+    <state width="1054" height="28" key="GridCell.Tab.1.right" timestamp="1610522114676">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state width="1054" height="380" key="GridCell.Tab.1.right/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610425344495" />
+    <state width="1054" height="28" key="GridCell.Tab.1.right/0.0.1097.577@0.0.1097.577" timestamp="1610522114676" />
+    <state x="58" y="0" key="SettingsEditor" timestamp="1611716072856">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="58" y="0" key="SettingsEditor/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611716072856" />
+    <state x="320" y="108" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1611712987841">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="320" y="108" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611712987841" />
+    <state x="0" y="0" key="new project wizard" timestamp="1611723337778">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="0" y="0" key="new project wizard/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1611723337778" />
+    <state x="206" y="125" key="run.anything.popup" timestamp="1610418159975">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="206" y="125" key="run.anything.popup/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610418159975" />
+    <state x="211" y="0" width="672" height="678" key="search.everywhere.popup" timestamp="1610511279652">
+      <screen x="0" y="0" width="1097" height="577" />
+    </state>
+    <state x="211" y="0" width="672" height="678" key="search.everywhere.popup/0.0.1097.577/1920.0.1536.824@0.0.1097.577" timestamp="1610425018185" />
+    <state x="211" y="0" width="672" height="678" key="search.everywhere.popup/0.0.1097.577@0.0.1097.577" timestamp="1610511279652" />
+  </component>
+</project>
