@@ -1,6 +1,7 @@
 package com.springbootjpa.demo.repository;
 
 import com.springbootjpa.demo.model.Account;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,7 +52,7 @@ class AccountJpaRepositoryTest {
 
         //when
         Page<Account> page = accountJpaRepository.findAll(PageRequest.of(0,10));
-        //db에 있는 account를 내가 정한 규격(0부터 10개)에 맞춰 page로 받아와 다룰 수 있다.
+        //db에 있는 account를 0번 페이지부터 받고 각 페이지에는 10개의 Account가 들어있도록
 
         //then
         assertTrue(page.getTotalElements()==1l); //page안에 들어있는 Account 개수
@@ -61,5 +62,30 @@ class AccountJpaRepositoryTest {
         System.out.println(page.getTotalElements());
         System.out.println(page.getNumber());
         System.out.println(page.getSize());
+
+    }
+
+    @Test
+    @DisplayName("common 쿼리연습")
+    public void queryPractice (){
+        //Given
+        Account account = new Account();
+        account.setUsername("young1");
+        Account account1 = new Account();
+        account1.setUsername("young1");
+        accountJpaRepository.save(account);
+        accountJpaRepository.save(account1);
+
+        //when
+        List<Account> accounts = accountJpaRepository.findByUsernameContainsIgnoreCase("y");
+        List<Account> accounts1 = accountJpaRepository.findDistinctAccountByUsernameContainsIgnoreCase("y");
+        List<Account> accounts2 = accountJpaRepository.findAccountDistinctByUsernameContainsIgnoreCase("y");
+        System.out.println("========accounts==========");
+        accounts1.stream().forEach(System.out::println);
+        accounts2.stream().forEach(System.out::println);
+
+
+        //then
+        assertTrue(accounts.contains(account));
     }
 }

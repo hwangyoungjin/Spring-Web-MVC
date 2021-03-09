@@ -8,6 +8,8 @@ import com.springbootjpa.demo.repository.AccountJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
@@ -38,6 +40,9 @@ public class JpaRunner implements ApplicationRunner {
 
         study.setOwner(account); // study 객체에 account 연결
         account.getStudies().add(study); // account 객체에 study 추가
+
+
+        PageRequest pageRequest = PageRequest.of(0,10, Sort.by(Sort.Direction.ASC,"String"));
 
         Study study1 = new Study();
         study1.setOwner(account);
