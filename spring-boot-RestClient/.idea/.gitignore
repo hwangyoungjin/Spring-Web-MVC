@@ -1,0 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../../../../../../:\Users\yoho5\Desktop\중앙대학교\전공 공부\Spring(스프링) - 인프런\프로젝트\스프링 MVC 활용\spring-boot-RestClient\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

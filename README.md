@@ -20,7 +20,7 @@
 
 8. [Spring-group-study](https://github.com/hwangyoungjin/SpringGroupStudy)
 
-9. [Spring-boot-Media-Api]
+9. [기술 연동 : Spring-boot-Swagger](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-boot-swagger/README.md)
 
 ## Spring 개념
 ---
