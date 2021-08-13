@@ -22,7 +22,7 @@
 
 9. [기술 연동 : Spring-boot-Swagger](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-boot-swagger/README.md)
 
-10. [OpenAPI 활용 : Spring-boot-RestTemplate](https://github.com/hwangyoungjin/spring-boot-RestTemplate)
+10. [OpenAPI 활용 : Spring-boot-RestTemplate](https://github.com/hwangyoungjin/Spring-Web-MVC/blob/master/spring-boot-RestTemplate/README.md)
 
 ## Spring 개념
 ---
