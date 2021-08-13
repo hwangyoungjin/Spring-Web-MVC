@@ -22,6 +22,8 @@
 
 9. [기술 연동 : Spring-boot-Swagger](https://github.com/hwangyoungjin/Spring-Web-MVC/tree/master/spring-boot-swagger/README.md)
 
+10. [OpenAPI 활용 : Spring-boot-RestTemplate](https://github.com/hwangyoungjin/spring-boot-RestTemplate)
+
 ## Spring 개념
 ---
 1. ### Spring 6가지 핵심기술 
